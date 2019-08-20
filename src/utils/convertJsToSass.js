@@ -1,7 +1,8 @@
-function convertJsToSass(obj, syntax) {
+async function convertJsToSass(obj, syntax) {
+  const resolved = await Promise.resolve(obj)
   const suffix = syntax === 'sass' ? '' : ';'
-  const keys = Object.keys(obj)
-  const lines = keys.map(key => `$${key}: ${formatValue(obj[key], syntax)}${suffix}`)
+  const keys = Object.keys(resolved)
+  const lines = keys.map(key => `$${key}: ${formatValue(resolved[key], syntax)}${suffix}`)
   return lines.join('\n')
 }
 
