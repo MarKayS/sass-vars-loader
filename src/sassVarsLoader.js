@@ -24,7 +24,7 @@ module.exports = async function(content) {
       ...options.vars,
     }
 
-    const sassVarsString = convertJsToSass(vars, syntax)
+    const sassVarsString = await convertJsToSass(vars, syntax)
     const result = [readSassFiles(files), sassVarsString, content].join('\n')
     callback(null, result)
   } catch (err) {
