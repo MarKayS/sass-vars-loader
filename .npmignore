@@ -20,7 +20,7 @@ coverage
 # non dist files
 coverage
 example
-src
+# src
 .travis.yml
 .eslintrc
 .nvmrc

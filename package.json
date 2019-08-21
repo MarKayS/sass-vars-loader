@@ -1,8 +1,8 @@
 {
-  "name": "@epegzz/sass-vars-loader",
-  "version": "5.0.0",
-  "author": "Daniel Schäfer <epegzz@gmail.com>",
-  "description": "A SASS vars loader for Webpack. Load global SASS vars from JS/JSON/Typescript files or from Webpack config.",
+  "name": "@markays/sass-vars-loader",
+  "version": "1.0.3",
+  "author": "MarKayS based on Daniel Schäfer <epegzz@gmail.com>",
+  "description": "Async fork from @epegzz/sass-vars-loader - A SASS vars loader for Webpack. Load global SASS vars from JS/JSON/Typescript files or from Webpack config.",
   "keywords": [
     "scss",
     "sass",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/epegzz/sass-vars-loader"
+    "url": "https://github.com/MarKayS/sass-vars-loader"
   },
   "engineStrict": true,
   "main": "src/sassVarsLoader.js",

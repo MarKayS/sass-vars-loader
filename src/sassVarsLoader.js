@@ -9,21 +9,19 @@ const convertJsToSass = require('./utils/convertJsToSass')
 
 module.exports = async function(content) {
   this.cacheable()
+
   const callback = this.async()
   try {
     const options = loaderUtils.getOptions(this) || {}
     const files = options.files || []
     const syntax = options.syntax || 'scss'
-
     await watchFilesForChanges(this, files)
-
     const vars = {
       ...readVarsFromJSONFiles(files),
-      ...readVarsFromJavascriptFiles(files),
+      ... await readVarsFromJavascriptFiles(files),
       ...readVarsFromTypescriptFiles(files),
       ...options.vars,
     }
-
     const sassVarsString = await convertJsToSass(vars, syntax)
     const result = [readSassFiles(files), sassVarsString, content].join('\n')
     callback(null, result)
